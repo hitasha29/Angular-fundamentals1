@@ -1,0 +1,11 @@
+<div class="search-container">
+  <input #searchInput type="text" placeholder="Search" (input)="onSearchInputChange(searchInput.value)">
+</div>
+
+<div class="loading" *ngIf="isLoading">Loading...</div>
+
+<ul class="search-results" *ngIf="!isLoading">
+  <li *ngFor="let result of searchResults">
+    {{ result.name }} - {{ result.description }}
+  </li>
+</ul>
